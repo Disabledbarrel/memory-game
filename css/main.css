@@ -1,0 +1,96 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  font-family: "Teko", sans-serif;
+  background: #1d1d1d;
+  color: #64dfdf;
+  line-height: 1.5; }
+
+.main-header {
+  text-align: center; }
+  .main-header h1 {
+    font-family: "Press Start 2P", cursive;
+    color: #6930c3;
+    text-transform: uppercase;
+    font-size: 5em;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #b6bdb4, 1px 2px 1px #b6bdb4, 1px 3px 1px #b6bdb4, 1px 4px 1px #b6bdb4, 1px 5px 1px #b6bdb4, 1px 6px 1px #b6bdb4, 1px 7px 1px #b6bdb4, 1px 8px 1px #b6bdb4, 1px 9px 1px #b6bdb4, 1px 10px 1px #b6bdb4, 1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4); }
+
+#reset-btn {
+  background-color: #6930c3;
+  color: #b6bdb4;
+  font-family: "Press Start 2P", cursive;
+  padding: 10px;
+  text-transform: uppercase; }
+
+.score-board {
+  display: flex;
+  justify-content: center; }
+  .score-board .game-info {
+    font-size: 2em;
+    margin: auto 1em auto 1em; }
+
+#times-up {
+  font-size: 2em;
+  text-align: center;
+  width: 50%;
+  margin: auto auto;
+  background-color: #6930c3;
+  border: 1px solid #b6bdb4;
+  display: none; }
+
+.memory-game {
+  padding: 0px 20px 0px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 1000px;
+  margin-bottom: 10px; }
+  .memory-game .memory-card {
+    height: 140px;
+    width: 140px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999, 4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
+    border-radius: 4px;
+    border: 2px solid #b6bdb4;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-out; }
+    .memory-game .memory-card.card-flipped {
+      transform: rotateY(180deg); }
+    .memory-game .memory-card .front-face,
+    .memory-game .memory-card .back-face {
+      position: absolute;
+      -webkit-perspective: 0;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      visibility: visible;
+      backface-visibility: hidden; }
+    .memory-game .memory-card .front-face {
+      transform: rotateY(180deg); }
+    .memory-game .memory-card img {
+      max-width: 100%;
+      max-height: 100%; }
+
+.end-game {
+  display: flex;
+  justify-content: center; }
+
+@media screen and (max-width: 599px) {
+  .main-header {
+    font-size: 0.5em;
+    text-align: center; }
+  .memory-game {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; }
+    .memory-game .memory-card {
+      width: 80px;
+      height: 80px; } }
